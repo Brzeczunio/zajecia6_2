@@ -25,11 +25,8 @@ def f4(a,b=''):
 	return '{0} ma kota'.format(a)
 
 def f5(a,b=1):
-	c=[]
-	if a>0:
-		c = range(a)
-		return c[::b]
-	return c
+	c = range(a)
+	return c[::b]
 
 def f6(a,b):
 	return a*b	
