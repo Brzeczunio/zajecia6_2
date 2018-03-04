@@ -1,4 +1,4 @@
-#Ćwiczenia 6
+# Ćwiczenia 6
 
 ```
 TDD w pythonie
