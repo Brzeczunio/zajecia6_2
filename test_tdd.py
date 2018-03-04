@@ -175,7 +175,7 @@ class TestTddF9(unittest.TestCase):
 		self.assertEqual(w,'jest zero')
 
 
-class TestTddf10(unittest.TestCase):
+class TestTddF10(unittest.TestCase):
 
 	def test_f10_1(self):
 		w=f10(1,1)
