@@ -48,9 +48,7 @@ def f7(a):
 		return 'tag koncowy'
 
 def f8(a,b):
-	if re.search(a,b):
-		return True
-	return False
+	return re.search(a,b)
 
 def f9(a,b):
 	if a>0 and b>0:
