@@ -2,7 +2,7 @@
 
 import unittest
 import random
-from tdd import f1,f2,f3,f4,f5,f6,f7
+from tdd import f1,f2,f3,f4,f5,f6,f7,f8,f9,f10
 
 class TestTddF1(unittest.TestCase):
 
@@ -123,15 +123,15 @@ class TestTddF7(unittest.TestCase):
 		self.assertEqual(w,'slowo')
 
         def test_f7_2(self):
-                w=f7(1)
+                w=f7('1')
                 self.assertEqual(w,'cyfra')
 
         def test_f7_3(self):
-                w=f7(11111)
+                w=f7('11111')
                 self.assertEqual(w,'liczba')
 
         def test_f7_4(self):
-                w=f7(-11111)
+                w=f7('-11111')
                 self.assertEqual(w,'liczba_ze_znakiem')
 
         def test_f7_5(self):
@@ -146,6 +146,44 @@ class TestTddF7(unittest.TestCase):
                 w=f7('</taaag>')
                 self.assertEqual(w,'tag koncowy')
 
+class TestTddF8(unittest.TestCase):
+	
+	def test_f8_1(self):
+		w=f8('kot','ala ma kota')
+		self.assertTrue(w)
+
+	def test_f8_2(self):
+		w=f8('pies','ala ma kota')
+		self.assertFalse(w)
+
+class TestTddF9(unittest.TestCase):
+
+	def test_f9_1(self):
+		w=f9(1,2)
+		self.assertEqual(w,'dodatnie')
+
+	def test_f9_2(self):
+		w=f9(-1,-2)
+		self.assertEqual(w,'ujemne')
+
+	def test_f9_3(self):
+		w=f9(-1,1)
+		self.assertEqual(w,'roznych znakow')
+
+	def test_f9_4(self):
+		w=f9(-1,0)
+		self.assertEqual(w,'jest zero')
+
+
+class TestTddf10(unittest.TestCase):
+
+	def test_f10_1(self):
+		w=f10(1,1)
+		self.assertEqual(w,'rowne')
+	
+	def test_f10_2(self):
+		w=f10(1,2)
+		self.assertEqual(w,'rozne')
 
 if __name__ == '__main__':
 	unittest.main()

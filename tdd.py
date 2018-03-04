@@ -20,22 +20,55 @@ def f3(a):
 	return 'other'
 
 def f4(a,b=''):
-	if len(b)>0:
-		return a+' ma kota i '+b
-	return a+' ma kota'
+	if b:
+		return '{0} ma kota i {1}'.format(a,b)
+	return '{0} ma kota'.format(a)
 
 def f5(a,b=1):
 	c=[]
 	if a>0:
-		for i in range(0,a,b):
-			c.append(i)
+		c = range(a)
+		return c[::b]
 	return c
 
 def f6(a,b):
-	c=''
-	for i in range(0,a):
-		c+='*'
-	return c	
+	return a*b	
 
 def f7(a):
-	return 0
+	if re.match('^\d$',a):
+		return 'cyfra'
+	elif re.match('[0-9]+',a):
+		return 'liczba'
+	elif re.match('-[0-9]+',a):
+		return 'liczba_ze_znakiem'
+	elif re.match('^[A-Z][a-z]+.',a):
+		return 'zdanie'
+	elif re.match('[a-zA-Z]+',a):
+		return 'slowo'
+	elif re.match('<[a-zA-Z]+>',a):
+		return 'tag poczatkowy'
+	elif re.match('</[a-zA-Z]+>',a):
+		return 'tag koncowy'
+
+def f8(a,b):
+	if re.search(a,b):
+		return True
+	return False
+
+def f9(a,b):
+	if a>0 and b>0:
+		return 'dodatnie'
+	elif a<0 and b<0:
+		return 'ujemne'
+	elif (a>0 and b<0) or (a<0 and b>0):
+		return 'roznych znakow'
+	elif a==0 or b==0:
+		return 'jest zero'
+	elif a==b:
+		return 'rowne'
+
+def f10(a,b):
+	if a==b:
+		return 'rowne'
+	else:
+		return 'rozne'
