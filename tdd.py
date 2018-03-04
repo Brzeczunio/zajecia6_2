@@ -34,13 +34,13 @@ def f6(a,b):
 def f7(a):
 	if re.match('^\d$',a):
 		return 'cyfra'
-	elif re.match('[0-9]+',a):
+	elif re.match('[\d]+',a):
 		return 'liczba'
-	elif re.match('-[0-9]+',a):
+	elif re.match('-[\d]+',a):
 		return 'liczba_ze_znakiem'
-	elif re.match('^[A-Z][a-z]+.',a):
+	elif re.match('^[A-Z][a-z\s]+.$',a):
 		return 'zdanie'
-	elif re.match('[a-zA-Z]+',a):
+	elif re.match('[A-Za-z]+',a):
 		return 'slowo'
 	elif re.match('<[a-zA-Z]+>',a):
 		return 'tag poczatkowy'
